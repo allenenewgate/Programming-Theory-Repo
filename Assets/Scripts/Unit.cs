@@ -7,7 +7,11 @@ public abstract class Unit : MonoBehaviour
 {
     [SerializeField]
     protected float speed;
+    [SerializeField]
+    private GameObject bullet;
 
+    protected Vector3 fireAngle;
+    protected Vector3 fireDirection;
     protected Vector3 destination;
     protected float fireCoolDown = 0.2f;
 
@@ -25,6 +29,6 @@ public abstract class Unit : MonoBehaviour
 
     protected virtual void Fire()
     {
-
+        
     }
 }
