@@ -15,4 +15,9 @@ public class SprayEnemy : Unit
     {
         MoveUnit();
     }
+
+    protected override void Fire()
+    {
+        
+    }
 }

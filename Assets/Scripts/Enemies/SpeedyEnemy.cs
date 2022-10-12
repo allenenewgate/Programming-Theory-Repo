@@ -15,4 +15,9 @@ public class SpeedyEnemy : Unit
     {
         MoveUnit();
     }
+
+    protected override void Fire()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -13,12 +13,18 @@ public class SniperEnemy : Unit
     {
         destination = new Vector3(Random.Range(-xBound, xBound), 1, Random.Range(-zBound, zBound));
         speed = 5f;
+        health = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveUnit();
+    }
+
+    protected override void Fire()
+    {
+        throw new System.NotImplementedException();
     }
 
     protected override void MoveUnit()  // Moves to random places

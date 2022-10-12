@@ -554,6 +554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7029993403932134258, guid: d4c5026fce8731b49af4f475b3b24942, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8132256747176093698, guid: d4c5026fce8731b49af4f475b3b24942, type: 3}
       propertyPath: m_Name
       value: Bullet
@@ -1365,6 +1369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1800706998642404475, guid: d08ba69c5ebc34c4a9c94516cc747705, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1800706998642404477, guid: d08ba69c5ebc34c4a9c94516cc747705, type: 3}
       propertyPath: m_Name
       value: Speedy Enemy
@@ -1384,7 +1392,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 249617606486324316, guid: d978077dd89bd864facda19d6175565f, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1871853524251758229, guid: d978077dd89bd864facda19d6175565f, type: 3}
       propertyPath: m_Name
@@ -1434,6 +1442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5701138432633041049, guid: d978077dd89bd864facda19d6175565f, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8132256747176093698, guid: d4c5026fce8731b49af4f475b3b24942, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d978077dd89bd864facda19d6175565f, type: 3}
 --- !u!1001 &8131678864912649811
@@ -1443,6 +1455,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6530570341447692880, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8132256747176093698, guid: d4c5026fce8731b49af4f475b3b24942, type: 3}
+    - target: {fileID: 8131678864517088596, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
       propertyPath: m_Name
       value: Sniper Enemy
@@ -1500,6 +1520,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6277692866041909326, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8132256747176093698, guid: d4c5026fce8731b49af4f475b3b24942, type: 3}
     - target: {fileID: 8333978062830238307, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1550,6 +1574,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333978062830238318, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

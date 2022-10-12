@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    private float fireCoolDown = 0.15f;
+
     // Start is called before the first frame update
     void Start()
     {
         speed = 10f;
+        health = 3;
     }
 
     // Update is called once per frame
@@ -15,6 +18,10 @@ public class Player : Unit
     {
         MoveUnit();
         AimWeapon(GetMouseTarget());
+        if (canFire && Input.GetMouseButton(0))
+        {
+            Fire();
+        }
     }
 
     protected override void MoveUnit()
@@ -30,7 +37,15 @@ public class Player : Unit
 
     protected override void Fire()
     {
-        base.Fire();
+        float radius = 0.5f;
+        Vector3 direction = GetMouseTarget() - transform.position;
+        direction.Normalize();
+        Vector3 spawnPos = transform.position + direction * radius;
+        spawnPos.y = 1;
+
+        Instantiate(bullet, spawnPos, transform.rotation);
+        Debug.Log(direction);
+        StartCoroutine(FireCoolDown(fireCoolDown));
     }
 
     private Vector3 GetMouseTarget()

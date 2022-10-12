@@ -8,12 +8,13 @@ public abstract class Unit : MonoBehaviour
     [SerializeField]
     protected float speed;
     [SerializeField]
-    private GameObject bullet;
+    protected GameObject bullet;
 
+    protected bool canFire = true;
     protected Vector3 fireAngle;
     protected Vector3 fireDirection;
     protected Vector3 destination;
-    protected float fireCoolDown = 0.2f;
+    protected int health = 1;
 
     protected const float xBound = 19.9f;
     protected const float zBound = 10.9f;
@@ -27,8 +28,12 @@ public abstract class Unit : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    protected virtual void Fire()
+    protected abstract void Fire();
+
+    protected virtual IEnumerator FireCoolDown(float coolDown)
     {
-        
+        canFire = false;
+        yield return new WaitForSeconds(coolDown);
+        canFire = true;
     }
 }

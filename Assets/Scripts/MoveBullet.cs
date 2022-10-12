@@ -6,6 +6,8 @@ public class MoveBullet : MonoBehaviour
 {
     [SerializeField]
     private float speed = 20f;
+    private const float xBound = 25f;
+    private const float zBound = 13f;
     Vector3 destination;
 
     // Start is called before the first frame update
@@ -18,5 +20,11 @@ public class MoveBullet : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+        // Destroy object if it goes too far
+        if (transform.position.x >= xBound || transform.position.x <= -xBound || transform.position.z >= zBound || transform.position.z <= -zBound)
+        {
+            Destroy(gameObject);
+        }
     }
 }
