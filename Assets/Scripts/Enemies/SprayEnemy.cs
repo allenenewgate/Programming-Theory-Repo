@@ -7,6 +7,7 @@ public class SprayEnemy : Unit
     // Start is called before the first frame update
     void Start()
     {
+        fireCoolDown = 0.2f;
         speed = 3f;
     }
 
@@ -14,10 +15,22 @@ public class SprayEnemy : Unit
     void Update()
     {
         MoveUnit();
+        if (canFire)
+        {
+            RotateUnit();
+            Fire();
+        }
     }
 
     protected override void Fire()
     {
+        Instantiate(bullet, transform.position, transform.rotation);
         
+        StartCoroutine(FireCoolDown(fireCoolDown));
+    }
+
+    private void RotateUnit()
+    {
+        transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
     }
 }

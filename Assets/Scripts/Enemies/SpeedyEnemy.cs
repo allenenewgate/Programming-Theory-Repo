@@ -8,6 +8,7 @@ public class SpeedyEnemy : Unit
     void Start()
     {
         speed = 6.0f;
+        health = 2;
     }
 
     // Update is called once per frame
