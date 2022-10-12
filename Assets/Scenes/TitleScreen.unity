@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 201864641}
   m_Layer: 5
   m_Name: Instructions
-  m_TagString: Instructions
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 1440424255}
   m_Layer: 5
   m_Name: Title Screen
-  m_TagString: TitleScreen
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
