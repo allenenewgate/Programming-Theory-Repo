@@ -8,12 +8,12 @@ public abstract class Unit : MonoBehaviour
     [SerializeField]
     protected float speed;
 
-    protected bool isStopped = true;
-    protected bool isWaiting = false;
     protected Vector3 destination;
+    protected float fireCoolDown = 0.2f;
 
-    protected static float xBound = 19.9f;
-    protected static float zBound = 10.9f;
+    protected const float xBound = 19.9f;
+    protected const float zBound = 10.9f;
+    
 
     protected virtual void MoveUnit()  // Base movement is to chase the player
     {

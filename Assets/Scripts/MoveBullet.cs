@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MoveBullet : MonoBehaviour
 {
+    [SerializeField]
+    private float speed = 10f;
+    Vector3 destination;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,6 @@ public class MoveBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //transform.Translate()
     }
 }

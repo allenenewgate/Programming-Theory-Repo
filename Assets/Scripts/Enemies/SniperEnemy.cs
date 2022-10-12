@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class SniperEnemy : Unit
 {
+    private bool isStopped = false;
+    private bool isWaiting = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        destination = new Vector3(Random.Range(-xBound, xBound), 1, Random.Range(-zBound, zBound));
         speed = 5f;
     }
 
@@ -18,7 +22,7 @@ public class SniperEnemy : Unit
     }
 
     protected override void MoveUnit()  // Moves to random places
-    {
+    {        
         if (isStopped && !isWaiting)
         {
             isWaiting = true;
@@ -39,7 +43,7 @@ public class SniperEnemy : Unit
     }
     protected IEnumerator PickDestination()  // Waits and then picks a random destination
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         destination = new Vector3(Random.Range(-xBound, xBound), 1, Random.Range(-zBound, zBound));
         isStopped = false;
         isWaiting = false;
