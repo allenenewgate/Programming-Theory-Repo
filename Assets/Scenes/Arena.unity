@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+    - {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
     spawnAmount: 02000000
     name: Wave 1
     spawnRate: 5
@@ -2425,6 +2425,39 @@ MonoBehaviour:
     - {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
     spawnAmount: 0200000001000000
     name: Wave 2
+    spawnRate: 5
+  - enemies:
+    - {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+    spawnAmount: 02000000
+    name: Wave 3
+    spawnRate: 5
+  - enemies:
+    - {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+    - {fileID: 1800706998642404477, guid: d08ba69c5ebc34c4a9c94516cc747705, type: 3}
+    - {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
+    spawnAmount: 010000000300000001000000
+    name: Wave 4
+    spawnRate: 5
+  - enemies:
+    - {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+    - {fileID: 1800706998642404477, guid: d08ba69c5ebc34c4a9c94516cc747705, type: 3}
+    - {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
+    spawnAmount: 020000000300000002000000
+    name: Wave 5
+    spawnRate: 5
+  - enemies:
+    - {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+    - {fileID: 1800706998642404477, guid: d08ba69c5ebc34c4a9c94516cc747705, type: 3}
+    - {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
+    spawnAmount: 020000000500000002000000
+    name: Wave 6
+    spawnRate: 5
+  - enemies:
+    - {fileID: 8131678864517088598, guid: 2a19e9a9da647384d8b25994cfcd79b6, type: 3}
+    - {fileID: 1800706998642404477, guid: d08ba69c5ebc34c4a9c94516cc747705, type: 3}
+    - {fileID: 8333978062830238312, guid: 27eaed219eeac2a40a17c88d981f96af, type: 3}
+    spawnAmount: 030000000600000003000000
+    name: Repeat Wave
     spawnRate: 5
   spawnPoints:
   - {fileID: 1248253682}
