@@ -12,15 +12,14 @@ public class GameManager : MonoBehaviour
     private List<GameObject> enemyList;
 
     public bool isGameActive = true;
-    public bool isGamePaused { get; private set; }
+    public bool isGamePaused { get; private set; } // ENCAPSULATION - really over the entire thing,
+                                                   // getters/setters seem like poor form so mostly used private/protected variables and serialized ones needed
 
-    // Start is called before the first frame update
     void Start()
     {
         isGamePaused = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isGameActive)
@@ -55,6 +54,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    // ABSTRACTION
     public void GameOver()
     {
         // Destroy objects to clear screen

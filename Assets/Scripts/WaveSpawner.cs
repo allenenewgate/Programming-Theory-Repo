@@ -102,6 +102,7 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
+    // ABSTRACTION
     private void SpawnEnemy(GameObject enemy)
     {
         Debug.Log("Spawning: " + enemy.name);
@@ -110,6 +111,7 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(enemy, spawnPoints[spawnPoint].transform.position, enemy.transform.rotation); // Spawn enemies at a random spawn point from the array
     }
 
+    // ABSTRACTION
     private bool EnemiesAlive()
     {
         searchCountDown -= Time.deltaTime;

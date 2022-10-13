@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class Player : Unit
+public class Player : Unit // INHERITANCE
 {
     [SerializeField]
     private GameManager gameManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         fireCoolDown = 0.15f;
@@ -13,7 +12,6 @@ public class Player : Unit
         health = 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameManager.isGameActive && !gameManager.isGamePaused)
@@ -27,6 +25,8 @@ public class Player : Unit
         }
     }
 
+
+    // POLYMORPHISM - and a lot of ABSTRACTION all the way down
     protected override void MoveUnit()  // Override to control movement based on input
     {
         float horizontalInput = Input.GetAxis("Horizontal");

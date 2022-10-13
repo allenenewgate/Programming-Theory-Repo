@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class SpeedyEnemy : Unit
+public class SpeedyEnemy : Unit // INHERITANCE
 {
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").gameObject;
@@ -10,14 +9,14 @@ public class SpeedyEnemy : Unit
         health = 2;
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveUnit();
     }
 
+    // POLYMORPHISM
     protected override void Fire()
     {
-        throw new System.NotImplementedException();
+        return;
     }
 }

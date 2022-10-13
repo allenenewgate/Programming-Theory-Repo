@@ -24,6 +24,7 @@ public abstract class Unit : MonoBehaviour
         player = GameObject.Find("Player").gameObject;
     }
 
+    // ABSTRACTION
     protected virtual void MoveUnit()  // Base movement is to chase the player
     {
         Vector3 target = player.transform.position;
@@ -41,6 +42,7 @@ public abstract class Unit : MonoBehaviour
         canFire = true;
     }
 
+    // ABSTRACTION
     protected virtual void HitUnit()  // decrease health of target then destroy if health hits 0, Player overrides to handle the game state
     {
         health--;

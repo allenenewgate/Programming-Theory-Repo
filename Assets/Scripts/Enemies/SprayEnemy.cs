@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class SprayEnemy : Unit
+public class SprayEnemy : Unit // INHERITANCE
 {
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").gameObject;
@@ -11,7 +10,6 @@ public class SprayEnemy : Unit
         speed = 3f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveUnit();
@@ -22,6 +20,7 @@ public class SprayEnemy : Unit
         }
     }
 
+    // POLYMORPHISM
     protected override void Fire()
     {
         Instantiate(bullet, transform.position, transform.rotation);
@@ -29,6 +28,7 @@ public class SprayEnemy : Unit
         StartCoroutine(FireCoolDown(fireCoolDown));
     }
 
+    // ABSTRACTION
     private void RotateUnit()
     {
         transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);

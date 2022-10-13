@@ -1,12 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class SniperEnemy : Unit
+public class SniperEnemy : Unit // INHERITANCE
 {
     private bool isStopped = false;
     private bool isWaiting = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").gameObject;
@@ -16,7 +15,6 @@ public class SniperEnemy : Unit
         StartCoroutine(FireCoolDown(fireCoolDown));
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveUnit();
@@ -26,6 +24,7 @@ public class SniperEnemy : Unit
         }
     }
 
+    // POLYMORPHISM
     protected override void Fire()
     {
         float radius = 0.9f;
@@ -61,6 +60,7 @@ public class SniperEnemy : Unit
         RotateUnit();
     }
 
+    // ABSTRACTION
     private void RotateUnit()
     { 
         // this is similar to the player AimWeapon() in that it will rotate to always face the player's position
@@ -70,6 +70,7 @@ public class SniperEnemy : Unit
         transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
+    // ABSTRACTION
     protected IEnumerator PickDestination()  // Waits and then picks a random destination
     {
         yield return new WaitForSeconds(0.5f);
