@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
@@ -9,7 +7,8 @@ public abstract class Unit : MonoBehaviour
     protected float speed;
     [SerializeField]
     protected GameObject bullet;
-
+    
+    protected GameObject player;
     protected bool canFire = true;
     protected float fireCoolDown = 1f;
     protected Vector3 fireAngle;
@@ -19,11 +18,15 @@ public abstract class Unit : MonoBehaviour
 
     protected const float xBound = 19.9f;
     protected const float zBound = 10.9f;
-    
+
+    private void Start()
+    {
+        player = GameObject.Find("Player").gameObject;
+    }
 
     protected virtual void MoveUnit()  // Base movement is to chase the player
     {
-        Vector3 target = GameObject.Find("Player").transform.position;
+        Vector3 target = player.transform.position;
         Vector3 direction = (target - transform.position).normalized;
 
         transform.Translate(direction * speed * Time.deltaTime, Space.World);

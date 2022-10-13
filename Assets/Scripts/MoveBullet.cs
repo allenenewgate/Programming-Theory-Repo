@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveBullet : MonoBehaviour
@@ -8,7 +6,6 @@ public class MoveBullet : MonoBehaviour
     private float speed;
     private const float xBound = 25f;
     private const float zBound = 13f;
-    Vector3 destination;
 
     // Start is called before the first frame update
     void Start()

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +8,9 @@ public class GameManager : MonoBehaviour
     private GameObject gameOverScreen;
     [SerializeField]
     private GameObject pauseMenu;
+    [SerializeField]
+    private List<GameObject> enemyList;
+
     public bool isGameActive = true;
     public bool isGamePaused { get; private set; }
 
@@ -21,7 +23,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isGameActive)
         {
             isGamePaused = !isGamePaused;
             PauseGame();
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
     
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(enemy);
         }
-        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
         foreach (GameObject bullet in bullets)
         {
             Destroy(bullet);
@@ -70,6 +73,5 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         gameOverScreen.SetActive(true);
         Time.timeScale = 0f;
-
     }
 }

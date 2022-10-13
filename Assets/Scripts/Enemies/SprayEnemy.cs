@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SprayEnemy : Unit
@@ -7,7 +5,9 @@ public class SprayEnemy : Unit
     // Start is called before the first frame update
     void Start()
     {
-        fireCoolDown = 0.2f;
+        player = GameObject.Find("Player").gameObject;
+        fireCoolDown = 0.3f;
+        StartCoroutine(FireCoolDown(fireCoolDown));
         speed = 3f;
     }
 

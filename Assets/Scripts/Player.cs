@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Unit
@@ -83,7 +80,7 @@ public class Player : Unit
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             HitUnit();

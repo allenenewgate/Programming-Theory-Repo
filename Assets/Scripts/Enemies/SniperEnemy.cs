@@ -1,17 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SniperEnemy : Unit
 {
     private bool isStopped = false;
     private bool isWaiting = false;
-    private Vector3 playerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player").gameObject;
         fireCoolDown = 1f;
         destination = new Vector3(Random.Range(-xBound, xBound), 1, Random.Range(-zBound, zBound));
         speed = 5f;
@@ -21,7 +19,6 @@ public class SniperEnemy : Unit
     // Update is called once per frame
     void Update()
     {
-        playerPosition = GameObject.Find("Player").gameObject.transform.position;
         MoveUnit();
         if (canFire)
         {
@@ -32,7 +29,7 @@ public class SniperEnemy : Unit
     protected override void Fire()
     {
         float radius = 0.9f;
-        Vector3 direction =  playerPosition - transform.position;
+        Vector3 direction =  player.transform.position - transform.position;
         direction.Normalize();
         Vector3 spawnPos = transform.position + direction * radius;
         spawnPos.y = 1;
@@ -67,7 +64,7 @@ public class SniperEnemy : Unit
     private void RotateUnit()
     { 
         // this is similar to the player AimWeapon() in that it will rotate to always face the player's position
-        Vector3 rotationDirection = playerPosition - transform.position;
+        Vector3 rotationDirection = player.transform.position - transform.position;
         float angle = Mathf.Atan2(rotationDirection.x, rotationDirection.z) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, angle, 0);
